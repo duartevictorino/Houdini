@@ -1,0 +1,8 @@
+float maxdist = chf("max_dist");
+int npts[] = nearpoints(0, @P, maxdist)[1:];
+
+i[]@npts = npts;
+
+foreach(int npt; npts){
+	addprim(0, "polyline", @ptnum, npt);
+}
