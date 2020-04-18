@@ -1,0 +1,11 @@
+// FOR LOOP TRAIL
+
+vector dir = normalize(v@v);
+vector pos = @P;
+int count = chi("count");
+
+for (int i=0;i<count;i++){
+    pos += dir * chf("gap");
+    int npt = addpoint(0,@ptnum);
+    setpointattrib(0,"P",npt,pos,"set");
+}
