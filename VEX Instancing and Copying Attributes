@@ -1,0 +1,16 @@
+p@orient                    // Orientation of the copy.
+f@pscale                    // Uniform scale.
+v@scale                     // Non-uniform scale.
+v@N                         // Normal (+Z axis of the copy, if no p@orient).
+v@up                        // Up vector of the copy (+Y axis of the copy, if no p@orient).
+v@v                         // Velocity of the copy (motion blur), used as +Z axis if no p@orient or v@N.
+p@rot                       // Additional rotation (applied after the orientation attributes above).
+v@P                         // Translation of the copy.
+v@trans                     // Translation of the copy, in addition to v@P.
+v@pivot                     // Local pivot point for the copy.
+3@transform or 4@transform  // Transform matrix overriding everything except v@P, v@pivot, and v@trans.
+s@shop_materialpath         // The instanced object uses this material.
+s@material_override         // A serialized Python dictionary mapping material parameter names to values.
+s@instance
+s@instancefile              // File path indicating what geometry to instance.
+s@instancepath              // Geometry to instance. This is either a path to a file on disk or an op: path.
