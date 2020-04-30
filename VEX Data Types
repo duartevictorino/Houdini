@@ -1,0 +1,11 @@
+
+float       f@name    // Floating point scalar values.
+vector2     u@name    // Two floating point values. Could be used to store 2D positions.
+vector3     v@name    // Three floating point values. Usually positions, directions, normals, UVW or colors.
+vector4     p@name    // Four floating point values. Usually rotation quaternions, or color and alpha (RGBA).
+int         i@name    // Integer values (VEX uses 32 bit integers).
+matrix2     2@name    // Four floating point values representing a 2D rotation matrix.
+matrix3     3@name    // Nine floating point values representing a 3D rotation matrix or 2D transform matrix.
+matrix      4@name    // Sixteen floating point values representing a 3D transform matrix.
+string      s@name    // A string of characters.
+
