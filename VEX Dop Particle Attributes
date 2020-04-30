@@ -1,0 +1,50 @@
+f@age       // Time in seconds since the particle was born.
+f@life      // Time in seconds the particle is allowed to live. When f@age>f@life, i@dead will be set to 1.
+f@nage      // Normalized age, f@age divided by f@life.  Implicit attribute, you cannot write to this.
+i@dead      // Whether a particle is living (0) or dead (1).  A dead particle is deleted in the Reaping stage.
+i@id        // A unique id for the particle that remains the same throughout a single simulation.
+ 
+i@stopped   // Whether a particle is moving (0) or stopped (1).
+i@stuck     // Whether a particle is free (0) or stuck (1).
+i@sliding   // Whether a particle is free (0) or sliding along a surface (1).
+f@cling     // Force applied to sliding paritcles inwards (according to the collision's surface normal).
+s@pospath   // The path to the object that the particle is colliding with.
+i@posprim   // Which collision primitive in the path geometry whose position we wish to refer to.
+v@posuv     // Parametric uv on the collision primitive.
+ 
+i@hittotal  // The cumulative total of all hits for the particle (only incremented once per timestep).
+i@has_pprevious // This is set to 1 if v@pprevious contains valid values.
+v@pprevious // Stores the position of the particle on the previous frame.  Used for collision detection.
+i@hitnum    // The number of times the particle collided in the last POP Collision Detect.
+s@hitpath   // The path to the object that was hit. A path to a file on disk or an op: path.
+i@hitprim   // The primitive hit. Could be -1 if it the collision detector couldn’t figure out which prim.
+v@hituv     // The parametric UV space on the primitive.
+v@hitpos    // Where the hit actually occurred.  Useful if the colliding object was moving.
+v@hitnml    // The normal of the surface at the time of the collision.
+v@hitv      // The velocity of the surface at the time of the collision.
+f@hittime   // When the collision occurred, that could be within a frame.
+f@hitimpulse// Records how much of an impulse was needed for the collision resolution.  varies with timestep.
+f@bounce    // When particles bounce off another object, this controls how much energy they keep.
+f@bounceforward // Controls how much energy they keep in the tangential direction.
+f@friction  // When particles bounce, they are slowed down proportional to how hard they hit.
+s@collisionignore   // Objects that match this pattern will not be collided.
+ 
+f@force     // Forces on the particle for this frame.
+f@mass      // Inertia of the particle.
+v@spinshape // This is multiplied by f@pscale to determine the shape of the particle for rotational inertia.
+f@drag      // How much the particle is effected by any wind effects.
+f@dragexp   // Ranges from 1 to 2, default is set on the solver.  Used for both angular and linear drag.
+v@dragshape // How much the particle is dragged in each of its local axes.
+v@dragcenter// If specified, drag forces will also generate torques on the particle.
+v@targetv   // The local wind speed. Thought of as the goal, or target, velocity for the particle.
+f@airresist // How important it is to match the wind speed.  Thickness of the air.
+f@speedmin  // Minumum speed, in units per second, that a particle can move.
+f@speedmax  // Maximum speed, in units per second, that a particle can move.
+ 
+p@orient    // Orientation of the particle.  Used for figuring out 'local' forces.
+v@w         // Angular speed of the particle.  A vector giving the rotation axis.
+v@torque    // The equivalent of force for spins. No inertial tensor (the equivalent of mass) is supported.
+v@targetw   // The goal spin direction and speed for this particle.
+f@spinresist// How important it is to match the targetw.
+f@spinmin   // Minumum speed in radians per second that a particle can spin.
+f@spinmax   // Maximum speed in radians per second that a particle can spin.
