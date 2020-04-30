@@ -1,0 +1,73 @@
+
+i@active    // Specifies whether the object is able to react to other objects.
+i@animated  // Specifies whether the transform should be updated from its SOP geometry at each timestep.
+i@deforming // Specifies whether the collision shape should be rebuilt from its SOP geometry each timestep.
+
+
+f@bounce    // The elasticity of the object.
+i@bullet_add_impact // Impacts that occur during the sim will be recorded in the Impacts or Feedback data.
+i@bullet_ignore     // Specifies whether the object should be completely ignored by the Bullet solver.
+f@bullet_angular_sleep_threshold// The sleeping threshold for the object’s angular velocity.
+f@bullet_linear_sleep_threshold // The sleeping threshold for the object’s linear velocity.
+i@bullet_want_deactivate// Disables simulation of a non-moving object until the object moves again.
+i@computecom// Specifies whether the center of mass should be computed from the collision shape.
+i@computemass   // Specifies whether the mass should be computedfrom the collision shape and density.
+f@creationtime  // Stores the simulation time at which the object was created.
+i@dead  // Specifies whether the object should be deleted during the next solve.
+f@density   // The mass of an object is its volume times its density.
+f@friction  // The coefficient of friction of the object.
+f@inertialtensorstiffness   // Rotational stiffness.  A scale factor applied to the inertial tensor.
+i@inheritvelocity   // v and w point attributes from the SOP geometry will override the initial velocity.
+f@mass  // The mass of the object.
+s@name  // A unique name for the object. Used by Constraint Networks.
+p@orient// The orientation of the object.
+v@P     // The current position of the object’s center of mass.
+v@pivot // The pivot that the orientation applies to. If i@computecom is non-zero, this is auto-computed.
+v@v     // Linear velocity of the object.
+v@w     // Angular velocity of the object, in radians per second.
+
+
+i@bullet_adjust_geometry    // Shrinks the collision geometry.
+i@bullet_autofit    // Use the bounds of the object for Box, Capsule, Cylinder, Sphere, or Plane.
+f@bullet_collision_margin   // Padding distance between collision shapes.
+s@bullet_georep     // Can be convexhull, concave, box, capsule, cylinder, compound, sphere, or plane.
+i@bullet_groupconnected     // Create convex hull per set of connected primitives.
+f@bullet_length     // The length of the Capsule or Cylinder collision shape in the Y direction.
+v@bullet_primR  // Orientation of the Box, Capsule, Cylinder, or Plane collision shape.
+v@bullet_primS  // Size of the Box collision shape.
+v@bullet_primT  // Position of the Box, Sphere, Capsule, Cylinder, or Plane collision shape.
+f@bullet_radius // Radius of the Sphere, Capsule, or Cylinder collision shape.
+f@bullet_shrink_amount  // Specifies the amount of resizing done by Shrink Collision Geometry.
+
+
+s@activationignore  // Won't be activated by collisions with any objects that match this pattern.
+s@collisiongroup    // Specifies the name of a collision group that this object belongs to.
+s@collisionignore   // The object will not collide against any objects that match this pattern.
+f@min_activation_impulse// Minimum impulse that will cause the object to switch from inactive to active.
+
+
+f@speedmin  // Minumum speed, in units per second, that a particle can move.
+f@speedmax  // Maximum speed, in units per second, that a particle can move.
+f@spinmin   // Minumum speed in radians per second that a particle can spin.
+f@spinmax   // Maximum speed in radians per second that a particle can spin.
+f@accelmax  // Limits the change in the object’s speed that is caused by enforcing constraints.
+f@angaccelmax   // Limits the change in the object’s angular speed that is caused by enforcing constraints.
+
+
+f@airresist // Specifies how important it is to match the target velocity (v@targetv).
+f@drag      // How much the the v@targetv and f@airresist attributes effect the object.
+f@dragexp   // Ranges from 1 to 2, default is set on the solver.  Used for both angular and linear drag.
+v@force     // Specifies a force that will be applied to the center of mass of the object.
+f@spinresist// Specifies how important it is to match the target angular velocity (v@targetw).
+v@targetv   // Target velocity for the object. Used in combination with the f@airresist attribute.
+v@targetw   // Target angular velocity for the object. Used in combination with the f@spinresist attribute.
+v@torque    // Specifies a torque that will be applied to the object.
+
+
+i@bullet_autofit_valid  // Stores whether the solver has already computed collision shape attributes.
+i@bullet_sleeping   // Tracks whether the object has been put to sleep by the solver.
+f@deactivation_time // Amount of time the speed has been below the Linear Threshold or Angular Threshold.
+i@found_overlap // Used by the solver to determine whether it has performed the overlap test.
+i@id    // A unique identifier for the object.
+i@nextid// Stores the i@id the solver will assign to the next new object.
+
