@@ -1,0 +1,29 @@
+
+i@anchor_id  // The anchor’s position will be bound to this point (or vertex).
+i@anchor_type   // Specifies if the anchor is attached to a point, vertex or agent transform.
+v@condir// The normal of a plane (i@condof==1) or axis (i@condof==2) the object can move on or rotate about.
+i@condof// Identifies the number of constrained degrees of freedom for an anchor (0 to 3).
+s@name  // The object the constraint is attached to.  An empty name attaches to world space position.
+v@P     // Identifies the initial world space position of the anchor.
+p@orient// Initial world space orientation of the anchor.  Takes precedence over v@r point attribute.
+v@r     // Identifies the initial world space orientation of the anchor as Euler angles.
+v@v     // Identifies the velocity of the world space position to which the constraint is attached.
+v@w     // Identifies the angular velocity of the world space position to which the constraint is attached.
+
+
+s@constraint_name   // Prim attribute specifying the Data Name of the constraint to create.
+s@constraint_type   // Prim attribute specifying degrees of freedom ('position', 'rotation' or 'all').
+s@next_constraint_name  // Prim attribute specifying the next constraint_name to use after broken.
+s@next_constraint_type  // Prim attribute specifying the next constraint_type to use after broken.
+i@propagate_iteration   // Detail attribute specifying number of impact propagations for glue constraints.
+
+
+f@force     // Prim attribute updated by the solver to contain the force applied to satisfy the constraint.
+f@distance  // Prim attribute updated by the solver to contain the distance between it's anchors.
+f@torque    // Prim attribute updated by the solver to contain the torque applied to satisfy the constraint.
+f@angle     // Prim attribute updated by the solver to contain the angle (in radians) between the anchors.
+f@impact    // Prim attribute updated by the solver to contain the accumulated impulses for the glue bond.
+
+
+i@group_broken  // Any constraints that are in the broken primitive group will be ignored by solvers.
+
